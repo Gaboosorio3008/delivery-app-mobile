@@ -105,7 +105,7 @@ const HomeScreen = () => {
         </View>
 
         <ScrollView
-          className=" mt-6 py-6 max-h-20"
+          className=" mt-6 max-h-20"
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ paddingHorizontal: 20 }}
@@ -114,10 +114,19 @@ const HomeScreen = () => {
           <Text> {categoriesFood} </Text>
           
         </ScrollView>
+
+        <ScrollView
+          className=" max-h-full"
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingHorizontal: 5 }}
+        >
         
         <View className="flex-row">
           {Card}
         </View>
+
+        </ScrollView>
       </SafeAreaView>
     </View>
   );

@@ -4,8 +4,10 @@ export const categories = [
     "Sushi",
     "Kebab",
     "Sweets",
-    "Noodles",
-    "Karahi"
+    "Karahi",
+    "HotDogs",
+    "Salads",
+    "Noodles"
   ]
   
   export const foodItems = [
@@ -35,7 +37,7 @@ export const categories = [
       price: '10.50',
       ingredients: 'Eggs, chicken, noodle',
       desc: 'Ramen is a popular Japanese dish that consists of chewy noodles in a savory broth, topped with a range of flavorful ingredients. The broth can be made with pork, chicken, or vegetable stock, flavored with soy sauce, miso, or other seasonings. The noodles are cooked until they are tender and then added to the broth along with toppings such as slices of pork belly.',
-      image: require('../../assets/IMG/ramen.png'),
+      image: require('../../assets/IMG/ramen2.png'),
     },
   
   ]

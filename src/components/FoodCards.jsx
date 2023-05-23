@@ -2,9 +2,11 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import * as Animatable from 'react-native-animatable';
+import { useNavigation } from "@react-navigation/native";
 
 
 export default function CardsFood({ item, index }) {
+  const navigation = useNavigation()
   return (
     <Animatable.View
     delay={index*120}
@@ -23,7 +25,8 @@ export default function CardsFood({ item, index }) {
 
         <Text className="text-2xl font-semibold text-white">${item.price}</Text>
 
-        <TouchableOpacity className=" bg-white rounded-full p-3">
+        <TouchableOpacity className=" bg-white rounded-full p-3"
+        onPress={() => navigation.navigate('FoodDetails')}>
         <Ionicons name="fast-food-sharp" size={32} color="black" />
 
         </TouchableOpacity>

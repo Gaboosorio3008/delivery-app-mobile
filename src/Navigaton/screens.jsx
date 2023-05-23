@@ -11,4 +11,13 @@ export function Screen1({ navigation }) {
   );
 }
 
+export function Screen2({ navigation }) {
+  return (
+    <View className="flex-1">
+    <Text>HOLA MUNDO</Text>    
+    </View> 
+
+  );
+}
+
 
