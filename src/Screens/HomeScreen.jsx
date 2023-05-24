@@ -12,6 +12,8 @@ import { categories, foodItems } from "../constants/Food";
 import { Ionicons } from "@expo/vector-icons";
 import * as Animatable from 'react-native-animatable';
 import CardsFood from "../components/FoodCards.jsx";
+import { Entypo } from '@expo/vector-icons';
+
 
 
 
@@ -100,7 +102,7 @@ const HomeScreen = () => {
           </View>
 
           <View className="bg-white shadow-md rounded-full p-3">
-            <Ionicons name="arrow-back" size={30} stroke={40} color="black" />
+          <Entypo name="controller-play" size={24} color="black" />
           </View>
         </View>
 
