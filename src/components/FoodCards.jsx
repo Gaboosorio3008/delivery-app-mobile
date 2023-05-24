@@ -26,7 +26,7 @@ export default function CardsFood({ item, index }) {
         <Text className="text-2xl font-semibold text-white">${item.price}</Text>
 
         <TouchableOpacity className=" bg-white rounded-full p-3"
-        onPress={() => navigation.navigate('FoodDetails', { itemsImage: item.image, itemsName: item.name})}>
+        onPress={() => navigation.navigate('FoodDetails', { itemsImage: item.image, itemsName: item.name, itemsPrice: item.price, itemsDescription: item.desc})}>
         <Ionicons name="fast-food-sharp" size={32} color="black" />
 
         </TouchableOpacity>

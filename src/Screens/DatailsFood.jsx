@@ -5,11 +5,13 @@ import {
   Image,
   SafeAreaView,
   TouchableOpacity,
+  Alert
 } from "react-native";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import * as Animatable from "react-native-animatable";
 
 const FoodDetails = (props) => {
   const navigation = useNavigation();
@@ -18,6 +20,14 @@ const FoodDetails = (props) => {
 
   const { itemsImage } = route.params;
   const { itemsName } = route.params;
+  const { itemsPrice } = route.params;
+  const { itemsDescription } = route.params;
+
+  const showAlert = () => {
+    Alert.alert('¡Alerta!', 'Product added to you cart', [
+      { text: 'Aceptar', onPress: () => navigation.navigate('Home') }
+    ]);
+  };
 
   return (
     <View className=" flex-1 bg-white">
@@ -62,6 +72,106 @@ const FoodDetails = (props) => {
               color="black"
               onPress={() => setCount(count + 1)}
             />
+          </View>
+
+          <View className="bg-white flex min-h-72 w-80 rounded-2xl gap-4 justify-between my-5 px-2">
+            <View className="flex-row gap-4">
+              <Animatable.View
+                delay={129}
+                animation={"slideInDown"}
+                className="flex items-center space-y-2"
+              >
+                <Image
+                  source={require("../../assets/IMG/calories.png")}
+                  className=" h-6 w-6"
+                />
+
+                <Text className="font-semibold"> 130 Cal</Text>
+              </Animatable.View>
+              <Animatable.View
+                delay={129}
+                animation={"slideInDown"}
+                className="flex items-center space-y-2"
+              >
+                <Image
+                  source={require("../../assets/IMG/clock.png")}
+                  className=" h-6 w-6"
+                />
+
+                <Text className="font-semibold"> 45-60 min</Text>
+              </Animatable.View>
+
+              <Animatable.View
+                delay={129}
+                animation={"slideInDown"}
+                className="flex items-center space-y-2"
+              >
+                <Image
+                  source={require("../../assets/IMG/chat.png")}
+                  className=" h-6 w-6"
+                />
+
+                <Text className="font-semibold"> Hello</Text>
+              </Animatable.View>
+
+              <Animatable.View
+                delay={129}
+                animation={"slideInDown"}
+                className="flex items-center space-y-2"
+              >
+                <Image
+                  source={require("../../assets/IMG/weight.png")}
+                  className=" h-6 w-6"
+                />
+
+                <Text className="font-semibold"> 1kg </Text>
+              </Animatable.View>
+            </View>
+
+            <View>
+              <Animatable.Text
+                delay={129}
+                animation={"slideInUp"}
+                className="flex items-center space-y-2"
+              >
+                <Text className=" font-bold text-lg"> Description </Text>
+              </Animatable.Text>
+            </View>
+
+            <View>
+              <Animatable.Text
+                delay={129}
+                animation={"slideInUp"}
+                className="flex items-center space-y-2"
+              >
+                <Text className=" font-medium text-1xl text-gray-600">
+                  {itemsDescription}
+                </Text>
+              </Animatable.Text>
+            </View>
+
+            <View className="flex-row justify-between items">
+              <Animatable.Text
+                delay={129}
+                animation={"slideInUp"}
+                className="flex items-center space-y-2"
+              >
+                <Text className=" font-medium text-3xl text-gray-600">
+                  ${itemsPrice * count}
+                </Text>
+              </Animatable.Text>
+
+              <Animatable.View delay={120} animation={"slideInUp"}>
+                <TouchableOpacity
+                  className=" bg-black rounded-full  mb-2"
+                  onPress={showAlert}
+                >
+                  <Text className=" font-medium text-xl text-white p-1">
+                    Add To Cart
+                  </Text>
+                </TouchableOpacity>
+              </Animatable.View>
+            </View>
           </View>
         </View>
       </SafeAreaView>
